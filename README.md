@@ -139,3 +139,89 @@ deleteEnrollment	@	enrollments.js:21
     throw error;
   }
 }
+
+.........
+{
+  "enrollments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "courseId": 3
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "courseId": 5
+    }
+  ]
+}
+
+
+<button class="cancelBtn" data-id="1">Cancelar inscripción</button>
+
+
+const API_URL = "http://localhost:3000/enrollments";
+
+export async function deleteEnrollment(enrollmentId) {
+  try {
+    const response = await fetch(`${API_URL}/${enrollmentId}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      console.log(`✅ Eliminado inscripción con ID ${enrollmentId}`);
+      return true;
+    } else {
+      console.error(`❌ Error al eliminar. Status: ${response.status}`);
+      return false;
+    }
+  } catch (error) {
+    console.error("❌ Error en DELETE:", error);
+    throw error;
+  }
+}
+
+main
+
+import { deleteEnrollment } from "./services/enrollments.js"; // ajusta el path si es necesario
+
+document.querySelectorAll(".cancelBtn").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const enrollmentId = btn.dataset.id;
+
+    if (!enrollmentId) {
+      alert("⚠️ Error: No se pudo obtener el ID de inscripción.");
+      console.error("Botón sin data-id:", btn);
+      return;
+    }
+
+    if (confirm("¿Estás seguro de cancelar esta inscripción?")) {
+      try {
+        const deleted = await deleteEnrollment(enrollmentId);
+        if (deleted) {
+          alert("✅ Inscripción cancelada correctamente.");
+          await loadPublicEvents(); // Refresca lista de cursos
+          await loadMyEvents();     // Refresca cursos inscritos
+        } else {
+          alert("❌ No se encontró la inscripción a eliminar.");
+        }
+      } catch (error) {
+        alert("❌ Ocurrió un error al cancelar la inscripción.");
+        console.error(error);
+      }
+    }
+  });
+});
+
+export async function loadPublicEvents() {
+  const response = await fetch("http://localhost:3000/courses");
+  const courses = await response.json();
+  // renderiza los cursos en el DOM
+}
+
+export async function loadMyEvents() {
+  const user = getSession(); // asegúrate que el usuario está logueado
+  const response = await fetch(`http://localhost:3000/enrollments?userId=${user.id}&_expand=course`);
+  const enrollments = await response.json();
+  // renderiza las inscripciones en el DOM
+}
