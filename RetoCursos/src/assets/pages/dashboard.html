@@ -1,0 +1,17 @@
+<h1>Panel de Administración</h1>
+<button id="logoutBtn">Cerrar Sesión</button>
+
+<nav>
+  <button id="showUsers">Usuarios</button>
+  <button id="showCourses">Cursos</button>
+</nav>
+
+<section id="adminContent">
+  <p>Selecciona una opción para administrar.</p>
+</section>
+
+<!-- Modal reutilizable -->
+<div id="modal" style="display:none; position:fixed; top:10%; left:30%; background:#fff; border:1px solid #ccc; padding:1rem;">
+  <form id="modalForm"></form>
+  <button onclick="document.getElementById('modal').style.display='none'">Cerrar</button>
+</div>

@@ -1,0 +1,361 @@
+:root {
+  --primary-color: #5b2eff;
+  --primary-dark: #3d1bcc;
+  --bg-light: #faf8ff;
+  --text-dark: #222;
+  --text-light: #777;
+  --accent: #ff6b6b;
+}
+
+/* Reset y fuente base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+.wrapper {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+#sidebar {
+  background: #ffffff;
+  width: 240px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #e0e0e0;
+}
+
+#sidebar h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+#sidebar button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#sidebar button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+#sidebar .active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* HEADER */
+#header {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+#header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logoutBtn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.logoutBtn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* APP */
+#app {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* FORMULARIOS */
+form label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* TABLAS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background-color: #f0f0f0;
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+tbody td {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* BOTONES DE ACCIÓN EN TABLAS */
+.actions button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: color 0.3s;
+}
+
+.actions button:hover {
+  color: var(--primary-dark);
+}
+
+/* MODAL */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#modalForm {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* BIENVENIDA */
+#visitorName {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  #sidebar button {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+  }
+
+  #sidebar h3 {
+    display: none;
+  }
+
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  #app {
+    padding: 1rem;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-top: none;
+    position: relative;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #666;
+    flex: 1;
+  }
+
+  tbody td:last-child {
+    justify-content: flex-end;
+  }
+
+  #modalForm {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  form input,
+  form select,
+  form button {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  form label {
+    margin-top: 0.75rem;
+  }
+}
+
+/* Tarjetas de curso */
+.course-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.course-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.course-description {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.course-meta {
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+button.danger {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.danger:hover {
+  background-color: #cc3a3a;
+}

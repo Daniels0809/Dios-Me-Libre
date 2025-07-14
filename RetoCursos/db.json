@@ -1,0 +1,89 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@admin.com",
+      "password": "admin123",
+      "role": "admin",
+      "phone": "1234567890",
+      "enrollNumber": "98765432100000",
+      "dateOfAdmission": "01-Jan-2020"
+    },
+    {
+      "id": "3",
+      "name": "Camila Ríos",
+      "email": "camila@mail.com",
+      "password": "camila123",
+      "role": "visitor",
+      "phone": "3121234567",
+      "enrollNumber": "20250714002",
+      "dateOfAdmission": "14-Jul-2025"
+    },
+    {
+      "id": "4",
+      "name": "Juan Pérez",
+      "email": "juan@mail.com",
+      "password": "juan123",
+      "role": "visitor",
+      "phone": "3107654321",
+      "enrollNumber": "20250714003",
+      "dateOfAdmission": "14-Jul-2025"
+    },
+    {
+      "id": "5",
+      "name": "Laura Gómez",
+      "email": "laura@mail.com",
+      "password": "laura123",
+      "role": "visitor",
+      "phone": "3205551234",
+      "enrollNumber": "20250714004",
+      "dateOfAdmission": "14-Jul-2025"
+    },
+    {
+      "name": "Daniela",
+      "email": "dani@dani.com",
+      "password": "123",
+      "role": "visitor",
+      "id": "07a3"
+    },
+    {
+      "name": "hola",
+      "email": "og@og",
+      "password": "132",
+      "role": "admin",
+      "id": "0367"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Introducción a JavaScript",
+      "description": "Curso básico de JavaScript",
+      "startDate": "10-Jul-2025",
+      "duration": "4 semanas"
+    },
+    {
+      "id": 2,
+      "title": "HTML y CSS desde Cero",
+      "description": "Aprende a construir sitios web con HTML5 y CSS3",
+      "startDate": "15-Jul-2025",
+      "duration": "3 semanas"
+    },
+    {
+      "id": 3,
+      "title": "Fundamentos de Git y GitHub",
+      "description": "Control de versiones para desarrolladores",
+      "startDate": "20-Jul-2025",
+      "duration": "2 semanas"
+    },
+    {
+      "id": 4,
+      "title": "Lógica de Programación",
+      "description": "Resuelve problemas con algoritmos y pseudocódigo",
+      "startDate": "25-Jul-2025",
+      "duration": "5 semanas"
+    }
+  ],
+  "enrollments": []
+}
