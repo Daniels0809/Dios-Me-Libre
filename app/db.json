@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Pedro",
+      "surname": "Rodriguez",
+      "username": "@Pedro"
+    },
+    {
+      "id": "2",
+      "name": "Laura",
+      "surname": "Martinez",
+      "user": "@Laura"
+    },
+    {
+      "id": "3",
+      "name": "Carlos",
+      "surname": "Gomez",
+      "user": "@Carlos"
+    },
+    {
+      "id": "4",
+      "name": "Ana",
+      "surname": "Fernandez",
+      "user": "@Ana"
+    },
+    {
+      "id": "5",
+      "name": "Miguel",
+      "surname": "Lopez",
+      "user": "@Miguel"
+    },
+    {
+      "id": "6",
+      "name": "Sofia",
+      "surname": "Ramirez",
+      "user": "@Sofia"
+    },
+    {
+      "id": "7",
+      "name": "Juan",
+      "surname": "Torres",
+      "user": "@Juan"
+    },
+    {
+      "id": "8",
+      "name": "Valentina",
+      "surname": "Diaz",
+      "user": "@Valentina"
+    },
+    {
+      "id": "9",
+      "name": "Andres",
+      "surname": "Vargas",
+      "user": "@Andres"
+    },
+    {
+      "id": "10",
+      "name": "Camila",
+      "surname": "Moreno",
+      "user": "@Camila"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(46, 44, 44);
+    color: white;
+}
+
+form{
+    margin: 30px;
+
+}
+
+form h1{
+    margin-bottom: 15px;
+
+}
+
+form input{
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+}
+
+form button{
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: rgb(98, 98, 254);
+    color: white;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+form button:hover{
+    transform: translateY(-2px);
+}
+
+main{
+    margin-bottom: 30px;
+    margin: 30px;
+}
+
+main h3{
+    font-size: 30px;
+
+}
+
+main p{
+    font-weight: 700;
+    font-size: 20px;
+}
