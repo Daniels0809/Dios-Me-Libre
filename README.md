@@ -93,3 +93,49 @@ _Añade aquí capturas de pantalla de tu app funcionando._
 ## 📄 Licencia
 
 MIT - Uso libre para fines educativos o personales.
+
+
+
+solucioname este problema: enrollments.js:21 
+ DELETE http://localhost:3000/enrollments/1 404 (Not Found)
+deleteEnrollment	@	enrollments.js:21
+(anonymous)	@	main.js:212
+
+  document.querySelectorAll(".cancelBtn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const enrollmentId = btn.dataset.id;
+
+      if (confirm("Are you sure you want to cancel this registration?")) {
+        try {
+          deleteEnrollment(enrollmentId);
+          alert("Registration canceled correctly ✅");
+
+          await loadPublicEvents(); // Refrescar cursos disponibles
+          await loadMyEvents();     // Refrescar lista de cursos inscritos
+        } catch (error) {
+          alert("An error occurred while canceling registration.");
+          console.error(error);
+        }
+      }
+    });
+  });
+
+
+  export async function deleteEnrollment(enrollmentId) {
+  try {
+    const response = await fetch( `${API_URL}/${enrollmentId}`, {
+      method: "DELETE"
+    });
+
+    if (response.ok) {
+      console.log("DELETE: recurso eliminado correctamente");
+      return true;
+    } else {
+      console.error("Error al eliminar");
+      return false;
+    }
+  } catch (error) {
+    console.error("Error en DELETE:", error);
+    throw error;
+  }
+}
